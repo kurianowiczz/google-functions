@@ -5,8 +5,6 @@ import {User} from "./types";
 
 export const requestUser = functions.https.onCall(
   async (id: string | undefined) => {
-    console.log(1, id);
-
     const user = await store
       .collection("users")
       .doc(`${id}`)
